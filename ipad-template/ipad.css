@@ -252,7 +252,7 @@ visibility: hidden;
     animation-fill-mode: forwards;
     -webkit-animation-delay:.5s;
   position: relative;
-  
+  top: -460px;
 }
 
 
@@ -405,7 +405,7 @@ left: -5px;
 
 .sprite-tag.first { background-position: 0px 0px; width: 439px; height: 148px; position: relative;
 top: -33px; } 
-.sprite-tag.local { background-position: 0px -178px; width: 444px; height: 164px; position: relative;
+.sprite-tag.local { background-position: 0px -178px; width: 444px; height: 183px; position: relative;
 top: -15px;
  } 
 .sprite-tag.think { background-position: 0px -372px; width: 446px; height: 183px;  } 

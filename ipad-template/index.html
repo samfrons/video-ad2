@@ -232,7 +232,7 @@
 }
 
 .tagline.landscape .sprite-tag {
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/ 
 }
 
 .sprite-tag {
@@ -240,7 +240,7 @@
                 margin: 0 auto;
                 display: block;
                 overflow: hidden;
-                padding-bottom: 30px;
+               /* padding-bottom: 30px;*/
 }
 
 
@@ -264,6 +264,13 @@ margin-top: -18px;
 {
     margin-top: -15px;
 }
+.paused {
+   -ms-animation-play-state:paused !important;
+   -o-animation-play-state:paused !important;
+   -moz-animation-play-state:paused !important;
+   -webkit-animation-play-state:paused !important;
+  	animation-play-state: paused !important;
+}
 
         </style>
     </head>
@@ -284,9 +291,9 @@ margin-top: -18px;
 
              <div class="screen" id="one">
                 <div class="tagline landscape">
-                <div class='sprite-tag think' id="think"></div>
-                <div class='sprite-tag local' id="local"></div>
-                <div class='sprite-tag first' id="first"></div>
+                	<div class='sprite-tag think' id="think" style="z-index: 10;"><img src="/images/think-b.png" /></div>
+                	<div class='sprite-tag local' id="local" style="z-index: 9;"><img src="/images/local-b.png" /></div>
+                	<div class='sprite-tag first' id="first" style="z-index: 8;"></div>
                 </div>
 
                  <div class="bottom landscape">
@@ -304,10 +311,10 @@ margin-top: -18px;
                     <span class="sprite create"></span>
                     <span class="sprite australia"></span>
                 </div>
-                <div class="sprite play-button landscape"></div>
-            <!--  <div id="player"></div> 
+                <div class="sprite play-button landscape" onclick="playVideo()"></div>
+              <div id="player"></div> 
 
-               <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe>-->
+<!--               <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe>-->
  
                 </div>
                  <div class="bottom paper landscape">
@@ -342,9 +349,9 @@ margin-top: -18px;
             
             <div class="screen" id="one">
                <div class="tagline portrait">
-                <div class='sprite-tag think' id="think"></div>
-                <div class='sprite-tag local' id="local"></div>
-                <div class='sprite-tag first' id="first"></div>
+                <div class='sprite-tag think' id="think" style="z-index: 10;"><img src="/images/think-b.png" /></div>
+                <div class='sprite-tag local' id="local" style="z-index: 9;"><img src="/images/local-b.png" /></div>
+                <div class='sprite-tag first' id="first" style="z-index: 8;"></div>
                 </div>
 
 
@@ -365,10 +372,10 @@ margin-top: -18px;
                     <span class="sprite australia"></span>
                 </div>
 
-                <a href="#" onclick="play()"><div class="sprite play-button portrait"></div></a>
-<!--
+                <a href="#" onclick="playVideo()"><div class="sprite play-button portrait" ></div></a>
+
                 <div id="player"></div>
-                
+ <!--               
                <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe>
                -->
              
@@ -424,7 +431,8 @@ margin-top: -18px;
         
         <!-- DO NOT MODIFY BELOW THIS LINE -->
         <script type="text/javascript" src="resources/javascript/tracking.js"></script>
-        <script type="text/javascript">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>        
+	<script type="text/javascript">
             //<![CDATA[ 
             TabletTracking.trackVideoEvents('videoPlayer');
             //]]> 
@@ -440,18 +448,18 @@ margin-top: -18px;
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
       var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
+      
+	  function playVideo(){
+	  	player = new YT.Player('player', {
+	          height: '390',
+	          width: '640',
+	          videoId: 'BAXW3lSMNFU',
+	          events: {
+	            'onReady': onPlayerReady,
+	            'onStateChange': onPlayerStateChange
+	          }
+	     });
+	  }
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         event.target.playVideo();
@@ -460,12 +468,28 @@ margin-top: -18px;
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-      var done = false;
+      //var done = false;
+      $('#landscape>#three').addClass('paused');
+      $('#landscape #agree').addClass('paused');
+      $('#portrait>#three').addClass('paused');
+      $('#portrait #agree').addClass('paused');   
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
+		if (event.data == YT.PlayerState.PLAYING /* && !done */) {
+	    	$('#landscape>#three').addClass('paused');      
+	  		$('#landscape #agree').addClass('paused');
+	  		$('#portrait>#three').addClass('paused');
+      		$('#portrait #agree').addClass('paused');   
+      
+	  //setTimeout(stopVideo, 6000);
+          //done = true;
         }
+		if(event.data == YT.PlayerState.ENDED) {
+			$('#landscape>#three').removeClass('paused');
+			$('#landscape #agree').removeClass('paused');
+			$('#portrait>#three').addClass('paused');
+      		$('#portrait #agree').addClass('paused');   
+		}
+
       }
       function stopVideo() {
         player.stopVideo();
