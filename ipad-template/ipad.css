@@ -187,9 +187,9 @@ visibility: hidden;
 
 .screen.landscape#three {
 	visibility: hidden;
-                -webkit-animation: bounceInLeft 3s linear ; 
+                -webkit-animation: bounceInLeft 3s ease-in ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:5s;
+                -webkit-animation-delay:3s;
                 display: block;
                 height: 748px;
                 width: 1024px;

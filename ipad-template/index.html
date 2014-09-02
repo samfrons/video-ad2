@@ -231,8 +231,22 @@
     margin-top: 0px;
 }
 
-.tagline.landscape .sprite-tag {
-    /*padding-bottom: 10px;*/ 
+#lanscape #player {
+    position: absolute;
+top: 0px;
+width: 1024px;
+height: 630px;
+}
+
+#portrait #player {
+    position: absolute;
+top: 0px;
+width: 768px;
+height: 500px;
+}
+
+.tagline.landscape .sprite-tag #local1 {
+    padding-bottom: 10px;
 }
 
 .sprite-tag {
@@ -291,8 +305,8 @@ margin-top: -18px;
 
              <div class="screen" id="one">
                 <div class="tagline landscape">
-                	<div class='sprite-tag think' id="think" style="z-index: 10;"><img src="/images/think-b.png" /></div>
-                	<div class='sprite-tag local' id="local" style="z-index: 9;"><img src="/images/local-b.png" /></div>
+                	<div class='sprite-tag think' id="think" style="z-index: 10;"><img src="images/think-b.png" /></div>
+                	<div class='sprite-tag local' id="local" style="z-index: 9;"><img src="images/local-b.png" /></div>
                 	<div class='sprite-tag first' id="first" style="z-index: 8;"></div>
                 </div>
 
@@ -431,7 +445,7 @@ margin-top: -18px;
         
         <!-- DO NOT MODIFY BELOW THIS LINE -->
         <script type="text/javascript" src="resources/javascript/tracking.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>        
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>        
 	<script type="text/javascript">
             //<![CDATA[ 
             TabletTracking.trackVideoEvents('videoPlayer');
