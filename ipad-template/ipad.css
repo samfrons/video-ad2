@@ -87,7 +87,6 @@ visibility: hidden;
 #one {
 	animation: screenOne ease-in .5s;
   animation-iteration-count: 1;
-  transform-origin: ;
   -webkit-animation: screenOne ease-in .5s;
   -webkit-animation-iteration-count: 1;
 	-webkit-animation: screenOne ease-in 3s;
@@ -102,7 +101,6 @@ visibility: hidden;
 	
 	animation: screenOne ease-in .5s;
   animation-iteration-count: 1;
-  transform-origin: ;
   -webkit-animation: screenOne ease-in .5s;
   -webkit-animation-iteration-count: 1;
 	-webkit-animation: screenOne ease-in 3s;
@@ -130,7 +128,7 @@ visibility: hidden;
     opacity:1;
     
     background: blue;
-    display: none !important;
+    display:none !important;
     
   }
 }
@@ -189,7 +187,7 @@ visibility: hidden;
 	visibility: hidden;
                 -webkit-animation: bounceInLeft 3s ease-in ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:3s;
+                -webkit-animation-delay: .5s;
                 display: block;
                 height: 748px;
                 width: 1024px;
@@ -208,7 +206,7 @@ visibility: hidden;
 
 /* word animations */
 
-#think {
+#think {/*
   animation: thinkDown ease-in .5s;
   animation-iteration-count: 1;
   transform-origin: ;
@@ -224,16 +222,14 @@ visibility: hidden;
   -ms-animation: thinkDown ease-in 2s;
   -ms-animation-iteration-count: 1;
   -ms-transform-origin: ;
-  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards; 
     animation-fill-mode: forwards;
-  position: relative;
-  top: -160px;
-  left: 10px;
+  position: relative;*/
 }
 
 
 #local {
-  animation: thinkDown ease-in .5s;
+  /*animation: thinkDown ease-in .5s;
   animation-iteration-count: 1;
   transform-origin: ;
   -webkit-animation: thinkDown ease-in .5s;
@@ -248,15 +244,15 @@ visibility: hidden;
   -ms-animation: thinkDown ease-in 2s;
   -ms-animation-iteration-count: 1;
   -ms-transform-origin: ;
-  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards; 
     animation-fill-mode: forwards;
     -webkit-animation-delay:.5s;
   position: relative;
-  top: -460px;
+  top: -460px;*/
 }
 
 
-#first {
+#first {/*
   animation: thinkDown ease-in .5s;
   animation-iteration-count: 1;
   transform-origin: ;
@@ -272,12 +268,12 @@ visibility: hidden;
   -ms-animation: thinkDown ease-in 2s;
   -ms-animation-iteration-count: 1;
   -ms-transform-origin: ;
-  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+  -webkit-animation-fill-mode: forwards; 
     animation-fill-mode: forwards;
     -webkit-animation-delay:1s;
   position: relative;
   top: -660px;
-  left: 10px;
+  left: 10px;*/
 }
 
 @keyframes thinkDown{
@@ -405,10 +401,10 @@ left: -5px;
 
 .sprite-tag.first { background-position: 0px 0px; width: 439px; height: 148px; position: relative;
 top: -33px; } 
-.sprite-tag.local { background-position: 0px -178px; width: 444px; height: 183px; position: relative;
+.sprite-tag.local { background-position: 0px -350px; width: 444px; height: 183px; position: relative;
 top: -15px;
  } 
-.sprite-tag.think { background-position: 0px -372px; width: 446px; height: 183px;  } 
+.sprite-tag.think { background-position: 0px -750px; width: 446px; height: 183px;  } 
 
 
 
@@ -416,7 +412,7 @@ top: -15px;
 	display: block;
 }
 
-#player {
+#player1,#player2 {
 	z-index : -1;
 	visibility: hidden;
     -webkit-animation: bounceInLeft 1s ease-in ; 
