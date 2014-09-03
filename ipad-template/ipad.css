@@ -416,3 +416,13 @@ top: -15px;
 	display: block;
 }
 
+#player {
+	z-index : -1;
+	visibility: hidden;
+    -webkit-animation: bounceInLeft 1s ease-in ; 
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay:1s;
+    display: block;
+    position: absolute;
+	top: 0px;
+}
