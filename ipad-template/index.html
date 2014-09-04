@@ -25,7 +25,7 @@
                 text-align: center;
                 position: absolute;
                 bottom: 0;
-                
+                z-index: 2;
             }
 
             .bottom .sprite {
@@ -44,6 +44,7 @@
                 position: absolute;
                 bottom: 0;
                 height: 484px;
+                z-index: 1;
 
             }
 
@@ -76,13 +77,15 @@
             }
 
             .bottom.paper.landscape {
-                -webkit-animation: bounceInLeft .1s linear ;
+                -webkit-animation: bounceInLeftt 1s linear ;
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:2s;
+                -webkit-animation-delay:4s;
                 background-image: url(images/paper-half-l.png);
                 height: 141px;
                 bottom: 0px;
                 top: initial;
+                visibility: hidden;
+                z-index: 11;
 
             }
 
@@ -110,10 +113,10 @@
             }
 
             #two {
-                visibility: hidden;
-                -webkit-animation: bounceInLeft 3s linear ; 
+                opacity: 0;
+                -webkit-animation: fadeIn 1s ease-in ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:2s;
+                -webkit-animation-delay:4s;
                 display: block;
                 height: 748px;
                 width: 1024px;
@@ -128,9 +131,10 @@
             }
 
             .bottom.paper {
-                -webkit-animation: displayIn .1s linear ;
+                
+                -webkit-animation: bounceInLeftt 1s linear ;
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:2s;
+                -webkit-animation-delay:4s;
                 opacity: 0;
 
 
@@ -302,7 +306,7 @@ margin-top: -18px;
                 <div class="tagline landscape">
                 	<div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 20px;"></div>
                 	<div class='sprite-tag local' id="local" style="height: 183px;background-position:0px -520px;"></div>
-                	<div class='sprite-tag first' id="first" style="height: 183px;background-position:0px -144px;"></div>
+                	<div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
                 </div>
 
                  <div class="bottom landscape">
@@ -310,7 +314,7 @@ margin-top: -18px;
                     <span class="sprite chevron-logo"></span>
                 </div>
             </div>
-
+ 
               <div class="screen" id="two">
                 <div id="video-bk" class="landscape">
 
@@ -322,8 +326,8 @@ margin-top: -18px;
                 </div>
                 <div class="sprite play-button landscape" onclick="playVideo(1)"></div>
               <div id="player1"></div> 
-
-<!--               <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe>-->
+<!--
+              <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe> -->
  
                 </div>
                  <div class="bottom paper landscape">
@@ -360,7 +364,7 @@ margin-top: -18px;
                <div class="tagline portrait">
                 <div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 20px;"></div>
                 <div class='sprite-tag local' id="local" style="height: 183px;background-position:0px -520px;"></div>
-                <div class='sprite-tag first' id="first" style="height: 183px;background-position:0px -144px;"></div>
+                <div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
                 </div>
 
 
@@ -390,12 +394,13 @@ margin-top: -18px;
              
  
                 </div>
-                 <div class="bottom paper">
-
-                 <div class="bottom">
+                <div class="bottom">
                <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
                     <span class="sprite chevron-logo"></span>
                     </div>
+                 <div class="bottom paper down">
+                
+                 
 
                 </div>
 

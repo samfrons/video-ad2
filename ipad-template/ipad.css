@@ -52,7 +52,7 @@ width: 768px;
 visibility: hidden;
                 -webkit-animation: bounceInLeft 3s linear ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:5s;
+                -webkit-animation-delay:3s;
                 position: absolute;
                 top: 0px;
 }
