@@ -36,13 +36,13 @@ video{-webkit-transition-property:top,left,width,height;}
 
 
 
-#portrait, #landscape, .screen#three {
+#portrait, #portrait .screen#three {
   background: url(images/back-texture.jpg);
   background-size: cover;
 
 }
 
- #landscape {
+ #landscape, #landscape .screen#three {
   background: url(images/paper-l.jpg);
   background-size: cover;
  }

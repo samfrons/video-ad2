@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <link rel="apple-touch-icon" href="icon.png">
         <link href="ipad.css" rel="stylesheet" type="text/css">
-        <link href="animate.css" rel="stylesheet" type="text/css">
+        <link href="animations.css" rel="stylesheet" type="text/css">
         
         <style type="text/css" >
 
@@ -327,6 +327,77 @@ margin-top: -18px;
    
 }
 
+.video-insert {
+   
+                background: url(images/paper.jpg);
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+                z-index: 1;
+position: absolute;
+visibility: hidden;
+top: 0;
+opacity: 1;
+}
+
+.video-insert.animated {
+     -webkit-animation: bounceInRighti 5s ease-in ;
+                -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:0s;
+}
+
+.fadeOut {
+    -webkit-animation: fadeOut 5s ease-in;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 0s;
+}
+
+.video-text {
+    text-align: center;
+    
+}
+
+#landscape .lineone {
+    margin-top: 195px;
+}
+
+#landscape .video-text > img {
+    width: 900px;
+    height: auto;
+    margin-bottom: 10px;
+
+}
+
+#portrait .video-text > img {
+    width: 660px;
+    height: auto;
+    margin-bottom: 10px;
+
+}
+
+#portrait .lineone {
+   margin-top: 160px;
+}
+
+.lineone.animated {
+    -webkit-animation: bounceInRighti 5s ease-in ;
+               -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:1s;
+                visibility: hidden;
+}
+.linetwo.animated {
+    -webkit-animation: bounceInRighti 5s ease-in ;
+               -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:2s;
+                visibility: hidden;
+}
+.linethree.animated {
+    -webkit-animation: bounceInRighti 5s ease-in ;
+               -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:3s;
+                visibility: hidden;
+}
+
         </style>
     </head>
     <body style="background:#000;">
@@ -375,6 +446,13 @@ margin-top: -18px;
                 </div>
                 <div class="sprite play-button landscape" onclick="playVideo(1)"></div>
               <div id="player1"></div> 
+
+
+              <div class="video-insert">
+                  <div class="video-text lineone"><img src="images/gorgonl.png"></div>
+                  <div class="video-text linetwo"><img src="images/more14l.png"></div>
+                  <div class="video-text linethree"><img src="images/allausl.png"></div>
+              </div>
 
              
  
@@ -441,7 +519,11 @@ margin-top: -18px;
 
                 <div id="player2"></div>
 
-             
+              <div class="video-insert">
+                  <div class="video-text lineone"><img src="images/gorgon.png"></div>
+                  <div class="video-text linetwo"><img src="images/more14.png"></div>
+                  <div class="video-text linethree"><img src="images/allaus.png"></div>
+              </div>
  
                 </div>
                 <div class="rip portrait two"></div>
@@ -551,6 +633,8 @@ margin-top: -18px;
       $('#portrait .fadeinp').addClass('paused');
       $('#portrait>#three').addClass('paused');
       $('#portrait #agree1').addClass('paused');   
+      $('.video-insert, .lineone, .linetwo, .linethree').addClass('paused');
+
       function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.PLAYING) {
 	    	$('#landscape>#three').addClass('paused');      
@@ -560,7 +644,8 @@ margin-top: -18px;
             $('#portrait #delayp').addClass('paused');
             $('#portrait .fadeinp').addClass('paused');
 	  		$('#portrait>#three').addClass('paused');
-      		$('#portrait #agree1').addClass('paused');   
+      		$('#portrait #agree1').addClass('paused');
+            $('.video-insert, .lineone, .linetwo, .linethree').addClass('paused');   
         }
 		if(event.data == YT.PlayerState.ENDED) {
 			$('#landscape>#three').removeClass('paused');
@@ -570,10 +655,30 @@ margin-top: -18px;
             $('#portrait .fadeinp').removeClass('paused');
             $('#portrait #delayp').removeClass('paused');
 			$('#portrait>#three').removeClass('paused');
-      		$('#portrait #agree1').removeClass('paused');   
+      		$('#portrait #agree1').removeClass('paused'); 
+            $('.video-insert, .lineone, .linetwo, .linethree').removeClass('animated');
+            $('.video-insert, .lineone, .linetwo, .linethree').addClass('fadeOut');
+
 		}
 
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          var done = false;
+          setTimeout(videoInput, 100);
+          done = false;
+        }
+
       }
+
+     
+      function videoInput() {
+
+        $('.video-insert, .lineone, .linetwo, .linethree').removeClass('paused');  
+        $('.video-insert, .lineone, .linetwo, .linethree').addClass('animated');
+      }
+
+
+
+
 	$('#landscape #think').animate({
 		backgroundPositionY: '-750px'
   	},1000,function(){
