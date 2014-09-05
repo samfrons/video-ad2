@@ -494,12 +494,12 @@ top: -50px;
 left: -5px;
 
 }
-.sprite.australia { background-position: 0px -112px; width: 542px; height: 97px;  } 
+/*.sprite.australia { background-position: 0px -112px; width: 542px; height: 97px;  } */
 .sprite.chevron-logo { background-position: 0px -229px; width: 106px; height: 99px; z-index: 5;} 
 .sprite.cta-explore { background-position: 0px -348px; width: 240px; height: 33px;  z-index: 5; } 
-.sprite.create { background-position: 0px -401px; width: 519px; height: 85px;  } 
+/*.sprite.create { background-position: 0px -401px; width: 519px; height: 85px;  } 
 .sprite.many { background-position: 0px -506px; width: 518px; height: 89px;  } 
-.sprite.jobs { background-position: 0px -615px; width: 529px; height: 211px;  } 
+.sprite.jobs { background-position: 0px -615px; width: 529px; height: 211px;  } */
 .sprite.play-button { background-position: 0px -846px; width: 95px; height: 95px;  } 
 .sprite.watch { background-position: 0px -961px; width: 110px; height: 30px;  } 
 
