@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Video Advert 2.03</title>
+        <title>Video Advert</title>
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <link rel="apple-touch-icon" href="icon.png">
@@ -45,7 +45,13 @@
                 bottom: 0;
                 height: 484px;
                 z-index: 1;
-
+top: -485px;
+-webkit-animation: bounceInDownnp 3s linear;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 1s;
+z-index: 1;
+visibility: hidden;
+opacity: 0;
             }
 
             .sprite-tag {
@@ -86,6 +92,7 @@
                 top: initial;
                 visibility: hidden;
                 z-index: 11;
+
 
             }
 
@@ -130,15 +137,7 @@
                 width: 1024px;
             }
 
-            .bottom.paper {
-                
-                -webkit-animation: bounceInLeftt 1s linear ;
-                -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:4s;
-                opacity: 0;
-
-
-            }
+           
             .sprite { background: url(images/sprite.png) no-repeat top left;  } 
 
             .text {
@@ -227,22 +226,49 @@
     margin-top: 20px;
 }
 
-.tagline.portrait {
-    margin-top: 75px;
+#one .tagline.portrait {
+    margin-top: 0px;
+    padding-top: 50px;
+       -webkit-animation: fadeOut 1s ease-in ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:3s;
 }
 
 .tagline.landscape {
     margin-top: 0px;
+    padding-top: 50px;
+     -webkit-animation: fadeOut 1s ease-in ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:3s;
 }
+
+.tagline.landscape.left {
+    -webkit-animation: fadeIn 5s ease-in ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:5s;
+}
+
+.tagline.portrait.left {
+    margin-top: 75px;
+}
+
+.tagline.portrait.left > .fadeinp {
+opacity: 0;
+   -webkit-animation: fadeIn 3s ease-in ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:2s;
+   
+}
+
 
 #player1 {
 	width: 1024px;
-	height: 630px;
+	height: 628px;
 }
 
 #player2 {
 	width: 768px;
-	height: 500px;
+	height: 540px;
 }
 .tagline.landscape .sprite-tag #local1 {
     padding-bottom: 10px;
@@ -265,8 +291,16 @@
                 margin: 0 auto;
 }
 
+#agree1 {
+    visibility: hidden;
+    -webkit-animation: zoomOut .3s ease-out ;
+                -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:4s;
+                margin: 0 auto;
+}
+
 #one .tagline.portrait {
-    margin-top: 30px;
+    padding-top: 30px;
 }
 #one .tagline.portrait #local {
 
@@ -285,6 +319,14 @@ margin-top: -18px;
   	animation-play-state: paused !important;
 }
 
+.bottom.landscape.two {
+    height: 83px;
+}
+
+.rip.landscape.two {
+   
+}
+
         </style>
     </head>
     <body style="background:#000;">
@@ -301,19 +343,20 @@ margin-top: -18px;
             
             <!-- Landscape Image: Update the reference to your landscape image	--> 
             <div id="landscape" >
-
-             <div class="screen" id="one">
+                
+           <div class="screen" id="one">
                 <div class="tagline landscape">
-                	<div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 20px;"></div>
+                	<div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 0px;"></div>
                 	<div class='sprite-tag local' id="local" style="height: 183px;background-position:0px -520px;"></div>
                 	<div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
                 </div>
-
+            <div class="rip landscape"></div>
                  <div class="bottom landscape">
                     <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
                     <span class="sprite chevron-logo"></span>
                 </div>
             </div>
+           
  
               <div class="screen" id="two">
                 <div id="video-bk" class="landscape">
@@ -324,26 +367,35 @@ margin-top: -18px;
                     <span class="sprite create"></span>
                     <span class="sprite australia"></span>
                 </div>
+
+                <div class="rip landscape two"></div>
+                <div class="bottom landscape two">
+                    <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
+                    <span class="sprite chevron-logo"></span>
+                </div>
                 <div class="sprite play-button landscape" onclick="playVideo(1)"></div>
               <div id="player1"></div> 
-<!--
-              <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe> -->
+
+             
  
                 </div>
-                 <div class="bottom paper landscape">
+                
+                <!-- <div class="bottom paper landscape">
                  <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
                     <span class="sprite chevron-logo"></span>
 
                 </div>
-
+                -->
+            
 
             </div>
 
              <div class="screen landscape" id="three">
+             <div class="rip landscape" id="delay"></div>
           <div class="tagline landscape left">
-                <div class='sprite-tag think' id="think1"></div>
-                <div class='sprite-tag local' id="local1"></div>
-                <div class='sprite-tag first' id="first1"></div>
+                <div class='sprite-tag think fadein' id="think1"></div>
+                <div class='sprite-tag local fadein' id="local1"></div>
+                <div class='sprite-tag first fadein' id="first1"></div>
                  <div class="sprite agree" id="agree"></div>
                 </div>
 
@@ -367,7 +419,7 @@ margin-top: -18px;
                 <div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
                 </div>
 
-
+                <div class="rip portrait"></div>
                  <div class="bottom">
                 <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
                     <span class="sprite chevron-logo"></span>
@@ -375,7 +427,7 @@ margin-top: -18px;
                 </div>
             </div>
 
-         <div class="screen portrait" id="two">
+        <div class="screen portrait" id="two">
                 <div id="video-bk">
 
                 <div class="text landscape">
@@ -388,31 +440,32 @@ margin-top: -18px;
                 <a href="#" onclick="playVideo(2)"><div class="sprite play-button portrait" ></div></a>
 
                 <div id="player2"></div>
- <!--               
-               <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe>
-               -->
+
              
  
                 </div>
+                <div class="rip portrait two"></div>
                 <div class="bottom">
                <a href="#" onclick="play()"><span class="sprite cta-explore"></span></a>
                     <span class="sprite chevron-logo"></span>
                     </div>
-                 <div class="bottom paper down">
+                <!-- <div class="bottom paper down">
                 
                  
 
-                </div>
+                </div> -->
 
 
             </div>
+           
 
             <div class="screen portrait" id="three">
+            <div class="rip portrait1" ></div>
           <div class="tagline portrait left">
-                <div class='sprite-tag think' id="think1"></div>
-                <div class='sprite-tag local' id="local1"></div>
-                <div class='sprite-tag first' id="first1"></div>
-                 <div class="sprite agree" id="agree"></div>
+                <div class='sprite-tag think fadeinp' id="think1"></div>
+                <div class='sprite-tag local fadeinp' id="local1"></div>
+                <div class='sprite-tag first fadeinp' id="first1"></div>
+                 <div class="sprite agree" id="agree1"></div>
                 </div>
 
                
@@ -448,6 +501,13 @@ margin-top: -18px;
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>        
 
 <script>
+
+
+/* iframe style option 
+
+ <iframe src="http://www.youtube.com/embed/0H0Ab9TID64?rel=0&amp;amp;theme=light&amp;amp;iv_load_policy=3&amp;amp;showinfo=0&amp;amp;hd=1&amp;amp;autohide=1&amp;amp;color=white&amp;amp;autoplay=1" frameborder="0" width="768" height="450" id="video"></iframe> 
+
+ */
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -485,20 +545,32 @@ margin-top: -18px;
       //    the player should play for six seconds and then stop.
       $('#landscape>#three').addClass('paused');
       $('#landscape #agree').addClass('paused');
+      $('#landscape #delay').addClass('paused');
+      $('#landscape .fadein').addClass('paused');
+      $('#portrait #delayp').addClass('paused');
+      $('#portrait .fadeinp').addClass('paused');
       $('#portrait>#three').addClass('paused');
-      $('#portrait #agree').addClass('paused');   
+      $('#portrait #agree1').addClass('paused');   
       function onPlayerStateChange(event) {
 		if (event.data == YT.PlayerState.PLAYING) {
 	    	$('#landscape>#three').addClass('paused');      
 	  		$('#landscape #agree').addClass('paused');
+            $('#landscape #delay').addClass('paused');
+            $('#landscape .fadein').addClass('paused');
+            $('#portrait #delayp').addClass('paused');
+            $('#portrait .fadeinp').addClass('paused');
 	  		$('#portrait>#three').addClass('paused');
-      		$('#portrait #agree').addClass('paused');   
+      		$('#portrait #agree1').addClass('paused');   
         }
 		if(event.data == YT.PlayerState.ENDED) {
 			$('#landscape>#three').removeClass('paused');
 			$('#landscape #agree').removeClass('paused');
+            $('#landscape #delay').removeClass('paused');
+            $('#landscape .fadein').removeClass('paused');
+            $('#portrait .fadeinp').removeClass('paused');
+            $('#portrait #delayp').removeClass('paused');
 			$('#portrait>#three').removeClass('paused');
-      		$('#portrait #agree').removeClass('paused');   
+      		$('#portrait #agree1').removeClass('paused');   
 		}
 
       }

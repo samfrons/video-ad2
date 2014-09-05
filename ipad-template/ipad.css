@@ -37,22 +37,25 @@ video{-webkit-transition-property:top,left,width,height;}
 
 
 #portrait, #landscape, .screen#three {
-	background: url(images/back-texture.jpg);
-	background-size: cover;
+  background: url(images/back-texture.jpg);
+  background-size: cover;
+
 }
 
  #landscape {
- 	background: url(images/paper-l.jpg);
-	background-size: cover;
+  background: url(images/paper-l.jpg);
+  background-size: cover;
  }
 
 .screen.portrait#three {
-	height: 1004px;
+  height: 1004px;
 width: 768px;
 visibility: hidden;
-                -webkit-animation: bounceInLeft 3s linear ; 
+                -webkit-animation: bounceInDownn 3s ease-in ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:3s;
+                -webkit-animation-delay:2s;
+                animation-direction:reverse;
+                -webkit-animation-direction:reverse;
                 position: absolute;
                 top: 0px;
 }
@@ -61,21 +64,21 @@ visibility: hidden;
 
 /* Video section */
 @media screen and (orientation:portrait) {
-	video {
-		top: 220px;
-		left: 73px;
-		width: 618px;
-		height: 350px;
-	}
+  video {
+    top: 220px;
+    left: 73px;
+    width: 618px;
+    height: 350px;
+  }
 }
 
 @media screen and (orientation:landscape) {
-	video {
-		top: 260px;
-		left: 212px;
-		width: 600px;
-		height: 340px;
-	}
+  video {
+    top: 260px;
+    left: 212px;
+    width: 600px;
+    height: 340px;
+  }
 }
 .sprite-tag { background: url('images/tagline-sprite.png') no-repeat top left;  } 
 .sprite-tag.first { background-position: 0px 0px; width: 439px; height: 148px;  } 
@@ -85,25 +88,96 @@ visibility: hidden;
 /* screen animations */
 
 #one {
-	animation: screenOne ease-in .5s;
+  animation: screenOne ease-in .5s;
   animation-iteration-count: 1;
   -webkit-animation: screenOne ease-in .5s;
   -webkit-animation-iteration-count: 1;
-	-webkit-animation: screenOne ease-in 3s;
+  -webkit-animation: screenOne ease-in 3s;
   -webkit-animation-iteration-count: 1;
  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
     animation-fill-mode: forwards;
     display: block;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background: url(images/jobs.jpg);
+    background-size: cover;
 
 }
 
+#portrait #one {
+ height: 570px;
+width: 768px;
+}
+
+
+.rip.landscape {
+  background: url(images/paper-half-l.png);
+  background-size: cover;
+  width: 1024px;
+  height:141px;
+  position: absolute;
+top: -140px;
+   -webkit-animation: bounceInDownn 3s linear ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:1s;
+  z-index: 2;
+
+}
+
+.rip.portrait {
+  background: url(images/paper-half.png);
+background-size: cover;
+width: 768px;
+height: 480px;
+position: absolute;
+top: -480px;
+-webkit-animation: bounceInDownnp 3s linear;
+-webkit-animation-fill-mode: forwards;
+-webkit-animation-delay: 1s;
+z-index: 2;
+visibility: hidden;
+opacity: 0;
+}
+.rip.portrait.two {
+top: -480px;
+height: 480px;
+
+}
+.rip.portrait1 {
+ background: url(images/paper-half.png);
+background-size: cover;
+width: 768px;
+height: 80px;
+position: absolute;
+top: -80px; 
+}
+
+
+
+#one:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  opacity: 1;
+ background-size: cover !important;
+ background-image: url(images/paper-l.jpg);
+ background-position: center center;
+ z-index: -1;
+ -webkit-animation: bounceInDownn 3s linear ;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay:1s;
+}
+
 .headline {
-	
-	animation: screenOne ease-in .5s;
+  
+  animation: screenOne ease-in .5s;
   animation-iteration-count: 1;
   -webkit-animation: screenOne ease-in .5s;
   -webkit-animation-iteration-count: 1;
-	-webkit-animation: screenOne ease-in 3s;
+  -webkit-animation: screenOne ease-in 3s;
   -webkit-animation-iteration-count: 1;
  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
     animation-fill-mode: forwards;
@@ -156,38 +230,40 @@ visibility: hidden;
 }
 
 #landscape #video-bk {
-	background: url(images/jobs.jpg);
-	background-size: cover;
-	width: 1024px;
-	height: 690px;
+  background: transparent !important;
+  background-size: cover;
+  width: 1024px;
+  height: 690px;
 }
 
 #video-bk {
 
-	background: url(images/jobs.jpg);
-	height: 610px;
-	width: 768px;
-	position: absolute;
-	background-position: center center;
-	background-size: cover;
-	top: 0px;
-	opacity: 1!important;
-	left: 0px;
+  background: transparent !important;
+  height: 610px;
+  width: 768px;
+  position: absolute;
+  background-position: center center;
+  background-size: cover;
+  top: 0px;
+  opacity: 1!important;
+  left: 0px;
 
  
 }
 
 .screen.portrait {
-	height: 1024px;
-	width:768px;
+  height: 1024px;
+  width:768px;
 }
 
 
 .screen.landscape#three {
-	visibility: hidden;
-                -webkit-animation: bounceInLeft 3s ease-in ; 
+  visibility: hidden;
+                -webkit-animation: bounceInDownn 8s linear ; 
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay: .5s;
+                -webkit-animation-delay:1s;
+                animation-direction:reverse;
+                -webkit-animation-direction:reverse;
                 display: block;
                 height: 748px;
                 width: 1024px;
@@ -195,12 +271,43 @@ visibility: hidden;
                 top: 0px;
 }
 
+.rip.landscape#delay {
+ 
+   width: 1024px;
+  height:141px;
+ top: -140px;
+   -webkit-animation: none !important;
+
+}
+
+.rip.portrait#delayp {
+ 
+   width: 768px;
+  height:141px;
+ top: -340px;
+     -webkit-animation: bounceInDownn 8s linear ; 
+                -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:1s;
+                animation-direction:reverse;
+                -webkit-animation-direction:reverse;
+                background: url(images/paper-half-f.png);
+
+}
+
+.fadein {
+-webkit-animation: fadeIn 1s linear ; 
+                -webkit-animation-fill-mode: forwards;
+                -webkit-animation-delay:1s;
+                opacity: 0;
+
+}
+
 #three .tagline.landscape.left {
-	margin-top: 45px;
+  margin-top: 0;
 }
 
 #three .tagline.landscape.left .sprite-tag {
-	padding-bottom: 28px;
+  padding-bottom: 28px;
 }
 
 
@@ -388,8 +495,8 @@ left: -5px;
 
 }
 .sprite.australia { background-position: 0px -112px; width: 542px; height: 97px;  } 
-.sprite.chevron-logo { background-position: 0px -229px; width: 106px; height: 99px;  } 
-.sprite.cta-explore { background-position: 0px -348px; width: 240px; height: 33px;  } 
+.sprite.chevron-logo { background-position: 0px -229px; width: 106px; height: 99px; z-index: 5;} 
+.sprite.cta-explore { background-position: 0px -348px; width: 240px; height: 33px;  z-index: 5; } 
 .sprite.create { background-position: 0px -401px; width: 519px; height: 85px;  } 
 .sprite.many { background-position: 0px -506px; width: 518px; height: 89px;  } 
 .sprite.jobs { background-position: 0px -615px; width: 529px; height: 211px;  } 
@@ -409,16 +516,16 @@ top: -15px;
 
 
 .sprite-tag {
-	display: block;
+  display: block;
 }
 
 #player1,#player2 {
-	z-index : -1;
-	visibility: hidden;
+  z-index : -1;
+  visibility: hidden;
     -webkit-animation: bounceInLeft 1s ease-in ; 
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-delay:1s;
     display: block;
     position: absolute;
-	top: 0px;
+  top: 0px;
 }
