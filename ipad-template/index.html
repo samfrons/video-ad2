@@ -208,10 +208,11 @@ opacity: 0;
             }
 
                 .play-button.portrait {
+                     opacity: 0;
                 background-position: 0px -112px; width: 542px; height: 97px; 
-                 -webkit-animation: fadeIn 1s ease-in ;
+                 -webkit-animation: fadeIn .5s ease-in ;
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:3.5s;
+                -webkit-animation-delay:6s;
                  background-position: 0px -846px; width: 95px; height: 95px; 
                 position: absolute;
                 left: 345px;
@@ -219,10 +220,11 @@ opacity: 0;
                 } 
 
                 .play-button.landscape {
+                    opacity: 0;
                     background-position: 0px -112px; width: 542px; height: 97px; 
-                -webkit-animation: fadeIn 1s ease-in ;
+               -webkit-animation: fadeIn .5s ease-in ;
                 -webkit-animation-fill-mode: forwards;
-                -webkit-animation-delay:3.5s;
+                -webkit-animation-delay:6s;
                  background-position: 0px -846px; width: 95px; height: 95px; 
                 position: absolute;
                     left: 470px;
@@ -239,17 +241,17 @@ opacity: 0;
 #one .tagline.portrait {
     margin-top: 0px;
     padding-top: 50px;
-       -webkit-animation: fadeOut 1s ease-in ;
+       -webkit-animation: fadeOut .5s ease-in ;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay:3s;
+  -webkit-animation-delay:3.5s;
 }
 
 .tagline.landscape {
     margin-top: 0px;
     padding-top: 50px;
-     -webkit-animation: fadeOut 1s ease-in ;
+     -webkit-animation: fadeOut .5s ease-in ;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay:3s;
+  -webkit-animation-delay:3.5s;
 }
 
 .tagline.landscape.left {
@@ -289,7 +291,7 @@ opacity: 0;
                 margin: 0 auto;
                 display: block;
                 overflow: hidden;
-                padding-bottom: 30px;
+                padding-bottom: 0
 }
 
 
@@ -351,7 +353,7 @@ opacity: 1;
 }
 
 .video-insert.animated {
-     -webkit-animation: bounceInRighti 5s ease-in ;
+     -webkit-animation: bounceInRighti 7s ease-in ;
                 -webkit-animation-fill-mode: forwards;
                 -webkit-animation-delay:0s;
 }
@@ -359,7 +361,7 @@ opacity: 1;
 .fadeOut {
     -webkit-animation: fadeOut 5s ease-in;
 -webkit-animation-fill-mode: forwards;
--webkit-animation-delay: 0s;
+-webkit-animation-delay: 2s;
 }
 
 .video-text {
@@ -427,9 +429,9 @@ opacity: 1;
                 
            <div class="screen" id="one">
                 <div class="tagline landscape">
-                	<div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 0px;"></div>
-                	<div class='sprite-tag local' id="local" style="height: 183px;background-position:0px -520px;"></div>
-                	<div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
+                	<div class='sprite-tag think' id="think" style="height: 130px;background-position:0px -750px;margin-top: 0px;"></div>
+                	<div class='sprite-tag local' id="local" style="height: 113px;background-position:0px -523px;"></div>
+                	<div class='sprite-tag first' id="first" style="height: 172px;background-position:0px -151px;"></div>
                 </div>
             <div class="rip landscape"></div>
                  <div class="bottom landscape">
@@ -502,9 +504,9 @@ opacity: 1;
             
             <div class="screen" id="one">
                <div class="tagline portrait">
-                <div class='sprite-tag think' id="think" style="height: 183px;background-position:0px -950px;margin-top: 20px;"></div>
-                <div class='sprite-tag local' id="local" style="height: 183px;background-position:0px -520px;"></div>
-                <div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -148px;"></div>
+                <div class='sprite-tag think' id="think" style="height: 181px;background-position:0px -750px;margin-top: 20px;"></div>
+                <div class='sprite-tag local' id="local" style="height: 182px;background-position:0px -528px; position: relative; top: -5px;"></div>
+                <div class='sprite-tag first' id="first" style="height: 178px;background-position:0px -150px; top: -8px; position: relative;"></div>
                 </div>
 
                 <div class="rip portrait"></div>
@@ -690,13 +692,16 @@ opacity: 1;
 
 
 	$('#landscape #think').animate({
-		backgroundPositionY: '-750px'
+		backgroundPositionY: '-750px',
+        height: '1px'
   	},1000,function(){
 		$('#landscape #local').animate({
-        	backgroundPositionY:'-350px'
+        	backgroundPositionY:'-350px',
+             height: '170px'
 		},1000,function(){
 			$('#landscape #first').animate({
-          backgroundPositionY:'0px'
+          backgroundPositionY:'8px',
+
       },1000,function(){});
 		});
 	});
@@ -705,30 +710,38 @@ opacity: 1;
 
         
         $('#landscape .many, #portrait .many').delay( 3500 ).animate({
-            backgroundPositionY: '-650px'
-        },1000,function(){    
-        $('#landscape .jobs, #portrait .jobs').delay( 500 ).animate({
+            backgroundPositionY: '-650px',
+            height: '119px'
+        },500,function(){    
+        $('#landscape .jobs, #portrait .jobs').delay( 00 ).animate({
             backgroundPositionY:'-382px',
-            height: '211px'
-        },1000,function(){
-            $('#landscape .create, #portrait .create').delay( 500 ).animate({
+            height: '197px'
+        },500,function(){
+            $('#landscape .create, #portrait .create').delay( 00 ).animate({
           backgroundPositionY:'-197px',
           height: '72px'
-      },1000,function(){
-        $('#landscape .australia, #portrait .australia').delay( 500 ).animate({
+      },500,function(){
+        $('#landscape .australia, #portrait .australia').delay( 00 ).animate({
             backgroundPositionY: '0px'
-        },1000,function(){});
+        },500,function(){});
 
       });
         });
     });
     
-	$('#portrait #think').animate({backgroundPositionY:'-750px'},1000,function(){
+	$('#portrait #think').animate({
+        backgroundPositionY:'-750px',
+        height: '203px'
+
+    },1000,function(){
     $('#portrait #local').animate({
-          backgroundPositionY:'-350px'
+          backgroundPositionY:'-350px',
+          height: '191px',
+          top: '0px'
     },1000,function(){
       $('#portrait #first').animate({
-          backgroundPositionY:'0px'
+          backgroundPositionY:'0px',
+          top: '0px'
       },1000,function(){});
     });
   });
